@@ -18,13 +18,15 @@ npm install mini-css-extract-plugin css-loader -D
 npm install stylus stylus-loader -D
 # Install copy webpack plugin (Copy files when preprocessing)
 npm install copy-webpack-plugin -D
-# Install url and file loader
+# Install url and file loader (Not necessary on webpack 5 version)
 npm install url-loader file-loader -D
+# Install css and js minifiers (Terser not necessary on webpack 5 version)
 npm install css-minimizer-webpack-plugin terser-webpack-plugin -D
 # Install dot env for webpack
 npm install dotenv-webpack -D
 
 # Live server (Plugin for visual code) to create web server for static websites
 
+# Execute webpack on production or development mode
 webpack --mode production
 webpack --mode development
