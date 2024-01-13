@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const DotEnv = require('dotenv-webpack');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
     // Specify development mode
@@ -25,6 +26,7 @@ module.exports = {
             '@utils': path.resolve(__dirname, 'src/utils/'),
         }
     },
+    devtool: "source-map",
     module: {
         rules: [
             {
@@ -85,6 +87,13 @@ module.exports = {
                 }
             ]
         })*/
-        new DotEnv()
-    ]
+        new DotEnv(),
+        new BundleAnalyzerPlugin()
+    ],
+    devServer: {
+        static: path.join(__dirname, "dist"),
+        compress: true,
+        historyApiFallback: true,
+        port: 3001,
+    },
 }

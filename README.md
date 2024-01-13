@@ -30,3 +30,13 @@ npm install dotenv-webpack -D
 # Execute webpack on production or development mode
 webpack --mode production
 webpack --mode development
+
+# Install webpack dev server (For development. Allows to watch changes and rebuild the app)
+npm install webpack-dev-server -D
+# Install web bundle analyzer (Generate reports for dependencies, usages, etc)
+npm install webpack-bundle-analyzer -D
+# Generate reports
+npx webpack --profile --json > stats.json
+# View report
+npx webpack-bundle-analyzer stats.json
+
